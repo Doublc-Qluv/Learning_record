@@ -1,3 +1,4 @@
+[TOC]
 ##Cost Function：
 $$J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$$
 

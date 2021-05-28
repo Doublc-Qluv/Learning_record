@@ -5,6 +5,7 @@
 信道编码定理(第5章) 
 线性分组码(第6章)
 ---
+[TOC]
 # 信息论的对象和方法
 ## 信息基本概念
 - 广义信息: 情报、知识、消息
@@ -310,13 +311,13 @@ $$
   3. 两个独立事件的联合信息量等于各自信息量之和。
 - 自信息量定义
   设单符号离散信源的信源空间为:
-  $$
-  \left[ \begin{array}{l}{X} \\ 
-  {P(x)}\end{array}\right]
-  =
-  \left[ \begin{array}{l}{x_{1}},  &{x_{2}}, &\cdots  &{x_{n}} \\ 
-  {p\left(x_{1}\right)},& p\left(x_{2}\right), &\cdots &{p\left(x_{n}\right)}\end{array}\right]
-  $$
+$$
+\left[\begin{array}{l}{X} \\ 
+{P(x)}\end{array}\right]
+=
+\left[\begin{array}{l}{x_{1}},  &{x_{2}}, &\cdots  &{x_{n}} \\ 
+{p\left(x_{1}\right)},& p\left(x_{2}\right), &\cdots &{p\left(x_{n}\right)}\end{array}\right]
+$$
   $$
   且满足：0 \leq p\left(x_{i}\right) \leq 1, \sum_{i=1}^{n} p\left(x_{i}\right)=1
   $$

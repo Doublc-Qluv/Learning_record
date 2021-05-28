@@ -1,3 +1,4 @@
+[TOC]
 #What is ML
 - 最重要的是对象：
     +  任务Task,T，一个或者多个
@@ -147,7 +148,7 @@ $$=\lambda e^{-\lambda}·e^{\lambda}$$
         + 即，如果x是某个电器元件的寿命，已知元件使用了s小时，则共使用至少s+t小时的条件概率，与从未使用开始至少使用t小时的概率相等。
 - 正态分布
     - 设$X \thicksim N(\mu , \sigma^{2})$，其概率密度为
-    $$$f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\sigma>0,$$
+    $$f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\sigma>0,$$
     则有$$E(X)=\mu$$
     $$D(X)=\sigma^2$$
 
@@ -316,10 +317,10 @@ $$f'(x)=f(x)·(1-f(x))$$
 	+ $将X_i的样本值x_i带入，得到：$
 	$$L(x)=\prod_{i=1}^{n}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x_i -\mu)^2}{2\sigma^2}}$$
 	+ 化简对数似然函数
-	$$\begin{eqnarray} 
+	$$\begin{array}{ll}
 	l(x)&=&log\prod_{i=1}^{n}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x_i -\mu)^2}{2\sigma^2}}\\
-		&=&-\frac{n}{2}log(2\pi\sigma^2)-\frac{1}{2\sigma^2}\sum_{i}(x_i-\mu)^2
-	\end{eqnarray}$$
+    &=&-\frac{n}{2}log(2\pi\sigma^2)-\frac{1}{2\sigma^2}\sum_{i}(x_i-\mu)^2
+	\end{array}$$
 	+ $将目标函数对参数\mu,\sigma分别求偏导，很容易得到\mu,\sigma的式子：$
 	$$\mu=\frac{1}{n}\sum_{i}x_i$$
 	$$\sigma^2=\frac{1}{n}\sum_{i}(x_i-\mu)^2$$
