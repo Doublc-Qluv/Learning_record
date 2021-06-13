@@ -1,4 +1,4 @@
-# 实验二  Linux内核与系统调用
+# 实验七  Linux内核与系统调用
 ## 实验目的
 - 1.编译Linux内核
 - 2.探究Linux启动过程
@@ -51,7 +51,7 @@ sudo make menuconfig
 - 添加系统调用
 
   - (1)添加系统调用号 
-    >vim ./arch/x86/entry/syscalls/syscall_64.tbl
+    >vim /usr/src/linux-4.17/arch/x86/entry/syscalls/syscall_64.tbl
 
     ![](编译.jpg)
     在后面添加了两个系统调用函数，sys_hello和326就是系统调用号
@@ -60,20 +60,23 @@ sudo make menuconfig
     >vim include/linux/syscalls.h 
     
     其中的asmlinkage用在大多数的系统调用中。有一些情况下是需要明确的告诉编译器，我们是使用stack来传递参数的，比如X86中的系统调用，是先将参数压入stack以后调用sys_\*函数的，所以所有的sys_\*函数都有asmlinkage来告诉编译器不要使用寄存器来编译。
+
   - (3)添加系统调用函数的定义 
-    >vim kernel/sys.c \
+    >vim /usr/src/linux-4.17/kernel/sys.c \
     printk(“Hello,world”);\
     return 1;
 
   - (4)编译内核 
     >sudo menuconfig 直接选择save，然后退出即可，生成.config \
-    sudo make 编译开始，可以使用make -j4 启用多线程。 \
+    sudo make 编译开始，**可以使用make -j4 启用多线程。** \
     sudo make modules_install 安装模块 \
     sudo make install 安装内核 
 
-  - (5)测试系统调用
+  - (5)重启系统并在高级选项中选择刚编译完的内核版本，之前的版本会在其末尾添加一个.old
+
+  - (6)测试系统调用
     - syscall的参数为系统调用号。 
     
     ![](code.jpg)
 
-    - 由于sys_hello里面有一条printk语句，该语句会将此输出作为系统的日志，通过dmesg命令查看。 
+    - 由于sys_hello里面有一条printf语句，该语句会将此输出作为系统的日志，通过dmesg命令查看。 
